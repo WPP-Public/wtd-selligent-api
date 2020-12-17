@@ -1,0 +1,404 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"version": "v1",
+		"title": "Selligent Marketing Cloud API",
+		"description": "Click the endpoint to see details. In the Parameters-section, we show an example of how the data you send along with the api-call looks like."
+	},
+	"host": "teachco.slgnt.us",
+	"basePath": "/Portal/Api",
+	"schemes": ["https"],
+	"paths": {
+		"/mediums": {
+			"get": {
+				"tags": ["Medium"],
+				"summary": "Use this endpoint to get list of all medium configurations.",
+				"operationId": "Medium_GetMediums",
+				"consumes": [],
+				"produces": ["application/json", "text/json"],
+				"parameters": [{
+					"name": "filter",
+					"in": "query",
+					"description": "Optional parameter to filter mediums by medium type (Ftp, Url or Repository).",
+					"required": false,
+					"type": "string"
+				}, {
+					"name": "search",
+					"in": "query",
+					"description": "Optional parameter to search mediums by name or description.",
+					"required": false,
+					"type": "string"
+				}, {
+					"name": "skip",
+					"in": "query",
+					"description": "Optional parameter to specify index to start picking medium items from.",
+					"required": false,
+					"type": "integer",
+					"format": "int32"
+				}, {
+					"name": "take",
+					"in": "query",
+					"description": "Optional parameter to specify count for the number of medium items to be taken.",
+					"required": false,
+					"type": "integer",
+					"format": "int32"
+				}],
+				"responses": {
+					"200": {
+						"description": "This endpoint will retrieve list of mediums. Check “Model” for the object - structure.",
+						"schema": {
+							"$ref": "#/definitions/mediums"
+						},
+						"examples": {
+							"mediums": [{
+								"type": "Ftp",
+								"api_name": "medium_ftp"
+							}, {
+								"type": "Url",
+								"api_name": "medium_url"
+							}, {
+								"type": "Repository",
+								"api_name": "medium_repository"
+							}]
+						}
+					},
+					"400": {
+						"description": "Represents a response for an unsuccessful retrieval in case of invalid medium type.",
+						"schema": {
+							"$ref": "#/definitions/retrieve_all_mediums_failed_response"
+						},
+						"examples": {
+							"errors": [{
+								"error_code": "ERR_MEDIUM_VALIDATION_INVALIDMEDIUM",
+								"description": "Invalid medium type provided."
+							}],
+							"result_code": "ValidationFailed",
+							"message": "Invalid medium type provided."
+						}
+					}
+				}
+			}
+		},
+		"/mediums/{api_name}": {
+			"get": {
+				"tags": ["Medium"],
+				"summary": "Use this endpoint to retrieve a medium (Ftp/Url/Repository) details.",
+				"operationId": "Medium_GetMedium",
+				"consumes": [],
+				"produces": ["application/json", "text/json"],
+				"parameters": [{
+					"name": "api_name",
+					"in": "path",
+					"description": "Parameter to specify medium API name.",
+					"required": true,
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "This endpoint will retrieve the medium details with the given api name.",
+						"schema": {
+							"$ref": "#/definitions/retrieve_medium_success_response"
+						},
+						"examples": {
+							"ftp_medium_model": {
+								"type": "Ftp",
+								"api_name": "Test_Ftp_Api",
+								"name": "TestFtpMedium",
+								"description": "TestFtpDescription",
+								"organizations": ["Organization1", "Organization2"],
+								"not_accessible_organizations_count": 1,
+								"ftp_type": "Ftps",
+								"server": "FTPServer",
+								"login": "TestFtpLogin",
+								"subfolder": "IN"
+							},
+							"repository_medium_model": {
+								"type": "Repository",
+								"api_name": "Test_Repository_Api",
+								"name": "TestRepositoryMedium",
+								"description": "TestFtpDescription",
+								"organizations": ["Organization1", "Organization2"],
+								"not_accessible_organizations_count": 1,
+								"data_exchange_type": "Selligent",
+								"subfolder": "IN"
+							},
+							"url_medium_model": {
+								"type": "Url",
+								"api_name": "Test_Url_Api",
+								"name": "TestUrlMedium",
+								"description": "TestFtpDescription",
+								"organizations": ["Organization1", "Organization2"],
+								"not_accessible_organizations_count": 1,
+								"url": "https://test.com",
+								"login": "TestUrlLogin"
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"tags": ["Medium"],
+				"summary": "Use this endpoint to delete a medium.",
+				"operationId": "Medium_DeleteMedium",
+				"consumes": [],
+				"produces": ["application/json", "text/json"],
+				"parameters": [{
+					"name": "api_name",
+					"in": "path",
+					"description": "API name of the medium to be deleted",
+					"required": true,
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "This endpoint will delete the medium with the given api name.",
+						"schema": {
+							"$ref": "#/definitions/delete_medium_success_response"
+						},
+						"examples": {
+							"result_code": "Succeeded",
+							"message": "The medium has been deleted successfully"
+						}
+					}
+				}
+			}
+		},
+		"/mediums/ftp": {
+			"post": {
+				"tags": ["Medium"],
+				"summary": "Use this endpoint to create a FTP medium.",
+				"operationId": "Medium_CreateFtpMedium",
+				"consumes": ["application/json", "text/json", "application/x-www-form-urlencoded"],
+				"produces": ["application/json", "text/json"],
+				"parameters": [{
+					"name": "model",
+					"in": "body",
+					"description": "The model object consists medium details that are to used to create the medium",
+					"required": true,
+					"schema": {
+						"$ref": "#/definitions/CreateFtpMediumApiRequestModel"
+					}
+				}],
+				"responses": {
+					"200": {
+						"description": "This endpoint will create a new medium of FTP type. This medium will contain the parameters, specifically for the chosen medium type. Check “Model” for the object - structure.",
+						"schema": {
+							"$ref": "#/definitions/create_medium_success_example_response"
+						},
+						"examples": {
+							"result_code": "Succeeded",
+							"message": "Medium created successfully."
+						}
+					},
+					"400": {
+						"description": "Medium Not Created",
+						"schema": {
+							"$ref": "#/definitions/create_medium_failed_example_response"
+						},
+						"examples": {
+							"errors": [{
+								"error_code": "ERR",
+								"description": "Incorrect data provided."
+							}],
+							"result_code": "Failed",
+							"message": "Request Failed"
+						}
+					}
+				}
+			}
+		},
+		"/mediums/ftp/{api_name}": {
+			"put": {
+				"tags": ["Medium"],
+				"summary": "Use this endpoint to update a FTP medium.",
+				"operationId": "Medium_UpdateFtpMedium",
+				"consumes": ["application/json", "text/json", "application/x-www-form-urlencoded"],
+				"produces": ["application/json", "text/json"],
+				"parameters": [{
+					"name": "api_name",
+					"in": "path",
+					"description": "API name of the FTP medium to be updated",
+					"required": true,
+					"type": "string"
+				}, {
+					"name": "model",
+					"in": "body",
+					"description": "The model object consists medium details that are to used to update the FTP medium",
+					"required": true,
+					"schema": {
+						"$ref": "#/definitions/UpdateFtpMediumApiRequestModel"
+					}
+				}],
+				"responses": {
+					"200": {
+						"description": "This endpoint will update a medium of FTP type. This medium will contain the parameters, specifically for the chosen medium type. Check “Model” for the object - structure.",
+						"schema": {
+							"$ref": "#/definitions/update_medium_success_response"
+						},
+						"examples": {
+							"result_code": "Succeeded",
+							"message": "Medium updated successfully."
+						}
+					},
+					"400": {
+						"description": "Medium Not Updated",
+						"schema": {
+							"$ref": "#/definitions/update_medium_failed_response"
+						},
+						"examples": {
+							"errors": [{
+								"error_code": "ERR_MEDIUM_VALIDATION",
+								"description": "Failed to update medium"
+							}],
+							"result_code": "ValidationFailed",
+							"message": "Request Failed"
+						}
+					}
+				}
+			}
+		},
+		"/mediums/repository": {
+			"post": {
+				"tags": ["Medium"],
+				"summary": "Use this endpoint to create a Repository medium.",
+				"operationId": "Medium_CreateRepositoryMedium",
+				"consumes": ["application/json", "text/json", "application/x-www-form-urlencoded"],
+				"produces": ["application/json", "text/json"],
+				"parameters": [{
+					"name": "model",
+					"in": "body",
+					"description": "The model object consists medium details that are to used to create the medium",
+					"required": true,
+					"schema": {
+						"$ref": "#/definitions/CreateRepositoryMediumApiRequestModel"
+					}
+				}],
+				"responses": {
+					"200": {
+						"description": "This endpoint will create a new medium of Repository type. This medium will contain the parameters, specifically for the chosen medium type. Check “Model” for the object - structure.",
+						"schema": {
+							"$ref": "#/definitions/create_medium_success_example_response"
+						},
+						"examples": {
+							"result_code": "Succeeded",
+							"message": "Medium created successfully."
+						}
+					},
+					"400": {
+						"description": "Medium Not Created",
+						"schema": {
+							"$ref": "#/definitions/create_medium_failed_example_response"
+						},
+						"examples": {
+							"errors": [{
+								"error_code": "ERR",
+								"description": "Incorrect data provided."
+							}],
+							"result_code": "Failed",
+							"message": "Request Failed"
+						}
+					}
+				}
+			}
+		},
+		"/mediums/repository/{api_name}": {
+			"put": {
+				"tags": ["Medium"],
+				"summary": "Use this endpoint to update a Repository medium.",
+				"operationId": "Medium_UpdateRepositoryMedium",
+				"consumes": ["application/json", "text/json", "application/x-www-form-urlencoded"],
+				"produces": ["application/json", "text/json"],
+				"parameters": [{
+					"name": "api_name",
+					"in": "path",
+					"description": "API name of the Repository medium to be updated",
+					"required": true,
+					"type": "string"
+				}, {
+					"name": "model",
+					"in": "body",
+					"description": "The model object consists medium details that are to used to update the Repository medium",
+					"required": true,
+					"schema": {
+						"$ref": "#/definitions/UpdateRepositoryMediumApiRequestModel"
+					}
+				}],
+				"responses": {
+					"200": {
+						"description": "This endpoint will update a medium of Repository type. This medium will contain the parameters, specifically for the chosen medium type. Check “Model” for the object - structure.",
+						"schema": {
+							"$ref": "#/definitions/update_medium_success_response"
+						},
+						"examples": {
+							"result_code": "Succeeded",
+							"message": "Medium updated successfully."
+						}
+					},
+					"400": {
+						"description": "Medium Not Updated",
+						"schema": {
+							"$ref": "#/definitions/update_medium_failed_response"
+						},
+						"examples": {
+							"errors": [{
+								"error_code": "ERR_MEDIUM_VALIDATION",
+								"description": "Failed to update medium"
+							}],
+							"result_code": "ValidationFailed",
+							"message": "Request Failed"
+						}
+					}
+				}
+			}
+		},
+		"/mediums/url": {
+			"post": {
+				"tags": ["Medium"],
+				"summary": "Use this endpoint to create a URL medium.",
+				"operationId": "Medium_CreateUrlMedium",
+				"consumes": ["application/json", "text/json", "application/x-www-form-urlencoded"],
+				"produces": ["application/json", "text/json"],
+				"parameters": [{
+					"name": "model",
+					"in": "body",
+					"description": "The model object consists medium details that are to used to create the medium",
+					"required": true,
+					"schema": {
+						"$ref": "#/definitions/CreateUrlMediumApiRequestModel"
+					}
+				}],
+				"responses": {
+					"200": {
+						"description": "This endpoint will create a new medium of URL type. This medium will contain the parameters, specifically for the chosen medium type. Check “Model” for the object - structure.",
+						"schema": {
+							"$ref": "#/definitions/create_medium_success_example_response"
+						},
+						"examples": {
+							"result_code": "Succeeded",
+							"message": "Medium created successfully."
+						}
+					},
+					"400": {
+						"description": "Medium Not Created",
+						"schema": {
+							"$ref": "#/definitions/create_medium_failed_example_response"
+						},
+						"examples": {
+							"errors": [{
+								"error_code": "ERR",
+								"description": "Incorrect data provided."
+							}],
+							"result_code": "Failed",
+							"message": "Request Failed"
+						}
+					}
+				}
+			}
+		},
+		"/mediums/url/{api_name}": {
+			"put": {
+				"tags": ["Medium"],
+				"summary": "Use this endpoint to update a URL medium.",
+				"operationId": "Medium_UpdateUrlMedium",
+				"consumes": ["application/json", "text/json", "application/x-www-form-urlencoded"],
+				"produces": ["applicatioht
