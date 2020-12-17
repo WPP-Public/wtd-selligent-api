@@ -1,6 +1,6 @@
 {
   "name": "@acceleration/selligent-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Node wrapper for selligent API",
   "main": "dist/api.js",
   "types": "dist/api.d.ts",
