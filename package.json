@@ -1,11 +1,14 @@
 {
-  "name": "selligent-api",
+  "name": "@acceleration/selligent-api",
   "version": "1.0.0",
   "description": "Node wrapper for selligent API",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "url": "https://github.com/Acceleration/selligent-api"
   },
   "keywords": [
     "Selligent",
