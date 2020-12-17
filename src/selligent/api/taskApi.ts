@@ -106,7 +106,7 @@ export class TaskApi {
      * @param model Parameter represesnts model for creating a batch task
      * @param enableAfterCreation Parameter represents if the task should be enabled after creation
      */
-    public async taskCreateBatchTask (organization: string, model: CreateBatchTaskApiRequestModel, enableAfterCreation?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: CreateExportTaskSuccessExampleResponse;  }> {
+    public async taskCreateBatchTask (organization: string, model: CreateBatchTaskApiRequestModel, enableAfterCreation?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: CreateExportTaskSuccessExampleResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/tasks/batch'
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
         let localVarQueryParameters: any = {};
@@ -164,7 +164,7 @@ export class TaskApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: CreateExportTaskSuccessExampleResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: CreateExportTaskSuccessExampleResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -187,7 +187,7 @@ export class TaskApi {
      * @param model Parameter represents model of export task
      * @param enableAfterCreation Parameter represents if the task should be enabled after creation
      */
-    public async taskCreateExportTask (organization: string, model: CreateExportTaskApiRequestModel, enableAfterCreation?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: CreateExportTaskSuccessExampleResponse;  }> {
+    public async taskCreateExportTask (organization: string, model: CreateExportTaskApiRequestModel, enableAfterCreation?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: CreateExportTaskSuccessExampleResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/tasks/export'
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
         let localVarQueryParameters: any = {};
@@ -245,7 +245,7 @@ export class TaskApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: CreateExportTaskSuccessExampleResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: CreateExportTaskSuccessExampleResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -268,7 +268,7 @@ export class TaskApi {
      * @param model Parameter represents model of import task
      * @param enableAfterCreation Parameter represents if the task should be enabled after creation
      */
-    public async taskCreateImportTask (organization: string, model: CreateImportTaskApiRequestModel, enableAfterCreation?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: CreateExportTaskSuccessExampleResponse;  }> {
+    public async taskCreateImportTask (organization: string, model: CreateImportTaskApiRequestModel, enableAfterCreation?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: CreateExportTaskSuccessExampleResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/tasks/import'
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
         let localVarQueryParameters: any = {};
@@ -326,7 +326,7 @@ export class TaskApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: CreateExportTaskSuccessExampleResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: CreateExportTaskSuccessExampleResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -349,7 +349,7 @@ export class TaskApi {
      * @param model Parameter represents model of SQL task
      * @param enableAfterCreation Parameter represents if the task should be enabled after creation
      */
-    public async taskCreateSqlTask (organization: string, model: CreateSqlTaskApiRequestModel, enableAfterCreation?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: CreateExportTaskSuccessExampleResponse;  }> {
+    public async taskCreateSqlTask (organization: string, model: CreateSqlTaskApiRequestModel, enableAfterCreation?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: CreateExportTaskSuccessExampleResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/tasks/sql'
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
         let localVarQueryParameters: any = {};
@@ -407,7 +407,7 @@ export class TaskApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: CreateExportTaskSuccessExampleResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: CreateExportTaskSuccessExampleResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -429,7 +429,7 @@ export class TaskApi {
      * @param apiName Parameter to specify API name of the list.
      * @param organization 
      */
-    public async taskDelete (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: DeleteTaskSuccessResponse;  }> {
+    public async taskDelete (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: DeleteTaskSuccessResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/tasks/{api_name}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
@@ -483,7 +483,7 @@ export class TaskApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: DeleteTaskSuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: DeleteTaskSuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -505,7 +505,7 @@ export class TaskApi {
      * @param apiName Parameter represents API name of the task
      * @param organization 
      */
-    public async taskDisableTask (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: DisableTaskResponseExample;  }> {
+    public async taskDisableTask (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: DisableTaskResponseExample;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/tasks/{api_name}/actions/disable'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
@@ -559,7 +559,7 @@ export class TaskApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: DisableTaskResponseExample;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: DisableTaskResponseExample;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -581,7 +581,7 @@ export class TaskApi {
      * @param apiName Parameter represents API name of the task
      * @param organization 
      */
-    public async taskEnableTask (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: EnableTaskResponseExample;  }> {
+    public async taskEnableTask (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: EnableTaskResponseExample;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/tasks/{api_name}/actions/enable'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
@@ -635,7 +635,7 @@ export class TaskApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: EnableTaskResponseExample;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: EnableTaskResponseExample;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -657,7 +657,7 @@ export class TaskApi {
      * @param apiName Parameter represents API name of the task
      * @param organization 
      */
-    public async taskGetTask (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: TaskDetailsResponseModel;  }> {
+    public async taskGetTask (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: TaskDetailsResponseModel;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/tasks/{api_name}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
@@ -711,7 +711,7 @@ export class TaskApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: TaskDetailsResponseModel;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: TaskDetailsResponseModel;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -733,7 +733,7 @@ export class TaskApi {
      * @param apiName Parameter represents API name of the task
      * @param organization 
      */
-    public async taskGetTaskActions (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: TaskActions;  }> {
+    public async taskGetTaskActions (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: TaskActions;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/tasks/{api_name}/actions'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
@@ -787,7 +787,7 @@ export class TaskApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: TaskActions;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: TaskActions;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -812,7 +812,7 @@ export class TaskApi {
      * @param skip Optional parameter to specify index to start picking task items from.
      * @param take Optional parameter to specify count for the number of task items to be taken.
      */
-    public async taskGetTasks (organization: string, filter?: string, search?: string, skip?: number, take?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: Tasks;  }> {
+    public async taskGetTasks (organization: string, filter?: string, search?: string, skip?: number, take?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Tasks;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/tasks'
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
         let localVarQueryParameters: any = {};
@@ -876,7 +876,7 @@ export class TaskApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: Tasks;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: Tasks;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -898,7 +898,7 @@ export class TaskApi {
      * @param apiName Parameter represents API name of the task
      * @param organization 
      */
-    public async taskRunTask (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: RunTaskSuccessResponse;  }> {
+    public async taskRunTask (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: RunTaskSuccessResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/tasks/{api_name}/actions/run'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
@@ -952,7 +952,7 @@ export class TaskApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: RunTaskSuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: RunTaskSuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);

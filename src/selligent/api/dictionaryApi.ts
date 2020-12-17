@@ -109,7 +109,7 @@ export class DictionaryApi {
      * @param organization 
      * @param model The model object consists of dictionary details that is used to create the dictionary.
      */
-    public async dictionaryCreateDictionary (organization: string, model: CreateDictionaryApiRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: CreateDictionarySuccessResponse;  }> {
+    public async dictionaryCreateDictionary (organization: string, model: CreateDictionaryApiRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: CreateDictionarySuccessResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/dictionaries'
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
         let localVarQueryParameters: any = {};
@@ -163,7 +163,7 @@ export class DictionaryApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: CreateDictionarySuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: CreateDictionarySuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -187,7 +187,7 @@ export class DictionaryApi {
      * @param model The model object consists of label details that is used to create a label in a dictionary.
      * @param sync If flag value is True then it performs synchronization of language codes with label translations. Default is false.
      */
-    public async dictionaryCreateLabel (apiName: string, organization: string, model: CreateLabelApiRequestModel, sync?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: CreateLabelSuccessResponse;  }> {
+    public async dictionaryCreateLabel (apiName: string, organization: string, model: CreateLabelApiRequestModel, sync?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: CreateLabelSuccessResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/dictionaries/{api_name}/labels'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
@@ -251,7 +251,7 @@ export class DictionaryApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: CreateLabelSuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: CreateLabelSuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -273,7 +273,7 @@ export class DictionaryApi {
      * @param apiName Parameter to specify existing api_name of dictionary.
      * @param organization 
      */
-    public async dictionaryDeleteDictionary (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: DeleteDictionarySuccessResponse;  }> {
+    public async dictionaryDeleteDictionary (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: DeleteDictionarySuccessResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/dictionaries/{api_name}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
@@ -327,7 +327,7 @@ export class DictionaryApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: DeleteDictionarySuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: DeleteDictionarySuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -350,7 +350,7 @@ export class DictionaryApi {
      * @param label The name of label to be deleted.
      * @param organization 
      */
-    public async dictionaryDeleteLabel (apiName: string, label: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: DeleteLabelSuccessResponse;  }> {
+    public async dictionaryDeleteLabel (apiName: string, label: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: DeleteLabelSuccessResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/dictionaries/{api_name}/labels/{label}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'label' + '}', encodeURIComponent(String(label)))
@@ -410,7 +410,7 @@ export class DictionaryApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: DeleteLabelSuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: DeleteLabelSuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -434,7 +434,7 @@ export class DictionaryApi {
      * @param skip Optional parameter to specify index to start picking dictionaries from.
      * @param take Optional parameter to specify count for the number of dictionaries to be taken.
      */
-    public async dictionaryGetDictionaries (organization: string, search?: string, skip?: number, take?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: RetrieveDictionariesSuccessExampleResponse;  }> {
+    public async dictionaryGetDictionaries (organization: string, search?: string, skip?: number, take?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: RetrieveDictionariesSuccessExampleResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/dictionaries'
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
         let localVarQueryParameters: any = {};
@@ -494,7 +494,7 @@ export class DictionaryApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: RetrieveDictionariesSuccessExampleResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: RetrieveDictionariesSuccessExampleResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -516,7 +516,7 @@ export class DictionaryApi {
      * @param apiName Parameter to specify API name of the dictionary.
      * @param organization 
      */
-    public async dictionaryGetDictionary (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: DictionaryDetailsResponseModel;  }> {
+    public async dictionaryGetDictionary (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: DictionaryDetailsResponseModel;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/dictionaries/{api_name}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
@@ -570,7 +570,7 @@ export class DictionaryApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: DictionaryDetailsResponseModel;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: DictionaryDetailsResponseModel;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -595,7 +595,7 @@ export class DictionaryApi {
      * @param skip Optional parameter to specify the start index for the labels.
      * @param take Optional parameter to specify count of the number of labels to be displayed.
      */
-    public async dictionaryGetLabels (apiName: string, organization: string, search?: string, skip?: number, take?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: RetrieveLabelsSuccessExampleResponse;  }> {
+    public async dictionaryGetLabels (apiName: string, organization: string, search?: string, skip?: number, take?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: RetrieveLabelsSuccessExampleResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/dictionaries/{api_name}/labels'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
@@ -661,7 +661,7 @@ export class DictionaryApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: RetrieveLabelsSuccessExampleResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: RetrieveLabelsSuccessExampleResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -684,7 +684,7 @@ export class DictionaryApi {
      * @param organization 
      * @param model The model object consists of dictionary details that is used to update the dictionary.
      */
-    public async dictionaryUpdateDictionary (apiName: string, organization: string, model: UpdateDictionaryApiRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: UpdateDictionarySuccessResponse;  }> {
+    public async dictionaryUpdateDictionary (apiName: string, organization: string, model: UpdateDictionaryApiRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: UpdateDictionarySuccessResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/dictionaries/{api_name}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
@@ -744,7 +744,7 @@ export class DictionaryApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: UpdateDictionarySuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: UpdateDictionarySuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -769,7 +769,7 @@ export class DictionaryApi {
      * @param model The model object consists of label details that is used to update an existing label in a dictionary.
      * @param sync If flag value is True then it performs synchronization of language codes with label translations. Default is false.
      */
-    public async dictionaryUpdateLabel (apiName: string, label: string, organization: string, model: UpdateLabelApiRequestModel, sync?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: UpdateLabelSuccessResponse;  }> {
+    public async dictionaryUpdateLabel (apiName: string, label: string, organization: string, model: UpdateLabelApiRequestModel, sync?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: UpdateLabelSuccessResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/dictionaries/{api_name}/labels/{label}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'label' + '}', encodeURIComponent(String(label)))
@@ -839,7 +839,7 @@ export class DictionaryApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: UpdateLabelSuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: UpdateLabelSuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);

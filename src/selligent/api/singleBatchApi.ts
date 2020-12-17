@@ -106,7 +106,7 @@ export class SingleBatchApi {
      * @param apiName Api name for the journey to be cancelled.
      * @param organization 
      */
-    public async singleBatchCancel (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: CancelSingleBatchJourneySuccessResponse;  }> {
+    public async singleBatchCancel (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: CancelSingleBatchJourneySuccessResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/journeys/singlebatch/{api_name}/cancel'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
@@ -160,7 +160,7 @@ export class SingleBatchApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: CancelSingleBatchJourneySuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: CancelSingleBatchJourneySuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -182,7 +182,7 @@ export class SingleBatchApi {
      * @param organization 
      * @param model The parameters required for the creation of the execution. journey.scheduling.launch_date is required, if journey.launch_state is \&quot;Schedule\&quot;. journey.send_in_waves.type can be \&quot;Waves\&quot; or \&quot;Items\&quot;. journey.sending_limit.type can be \&quot;Absolute\&quot; or \&quot;Relative\&quot;. journey.sending_limit.sort_selection can be \&quot;Random\&quot; or \&quot;Sorted\&quot;. Folder is the string id of the folder where single batch journey will be created.
      */
-    public async singleBatchCreate (organization: string, model: CreateSingleBatchRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: CreateSingleBatchSuccessResponse;  }> {
+    public async singleBatchCreate (organization: string, model: CreateSingleBatchRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: CreateSingleBatchSuccessResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/journeys/singlebatch'
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
         let localVarQueryParameters: any = {};
@@ -236,7 +236,7 @@ export class SingleBatchApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: CreateSingleBatchSuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: CreateSingleBatchSuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -258,7 +258,7 @@ export class SingleBatchApi {
      * @param organization 
      * @param requestModel Request model to send single batch with email message. journey.scheduling.launch_date is required if journey.launch_state is \&quot;Schedule\&quot;. journey.send_in_waves.type can be \&quot;Waves\&quot; or \&quot;Items\&quot;. journey.sending_limit.type can be \&quot;Absolute\&quot; or \&quot;Relative\&quot;. journey.sending_limit.sort_selection can be \&quot;Random\&quot; or \&quot;Sorted\&quot;. Folder is the string id of the folder where single batch journey will be created.
      */
-    public async singleBatchCreateSingleBatchEmailMessage (organization: string, requestModel: CreateSingleBatchMessageRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: CreateSingleBatchSuccessResponse;  }> {
+    public async singleBatchCreateSingleBatchEmailMessage (organization: string, requestModel: CreateSingleBatchMessageRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: CreateSingleBatchSuccessResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/journeys/singlebatch/message'
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
         let localVarQueryParameters: any = {};
@@ -312,7 +312,7 @@ export class SingleBatchApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: CreateSingleBatchSuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: CreateSingleBatchSuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -334,7 +334,7 @@ export class SingleBatchApi {
      * @param organization 
      * @param requestModel Request model providing journey info and mobile push message info. journey.scheduling.launch_date is required if journey.launch_state is \&quot;Schedule\&quot;. journey.send_in_waves.type can be \&quot;Waves\&quot; or \&quot;Items\&quot;. journey.sending_limit.type can be \&quot;Absolute\&quot; or \&quot;Relative\&quot;. journey.sending_limit.sort_selection can be \&quot;Random\&quot; or \&quot;Sorted\&quot;.
      */
-    public async singleBatchCreateSingleBatchMobilePush (organization: string, requestModel: CreateSingleBatchMobilePushRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: CreateSingleBatchSuccessResponse;  }> {
+    public async singleBatchCreateSingleBatchMobilePush (organization: string, requestModel: CreateSingleBatchMobilePushRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: CreateSingleBatchSuccessResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/journeys/singlebatch/mobile'
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
         let localVarQueryParameters: any = {};
@@ -388,7 +388,7 @@ export class SingleBatchApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: CreateSingleBatchSuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: CreateSingleBatchSuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -410,7 +410,7 @@ export class SingleBatchApi {
      * @param organization 
      * @param requestModel Request model providing journey and sms content details. journey.scheduling.launch_date is required if journey.launch_state is \&quot;Schedule\&quot;. journey.send_in_waves.type can be \&quot;Waves\&quot; or \&quot;Items\&quot;.journey.sending_limit.type can be \&quot;Absolute\&quot; or \&quot;Relative\&quot;. journey.sending_limit.sort_selection can be \&quot;Random\&quot; or \&quot;Sorted\&quot;.
      */
-    public async singleBatchCreateSingleBatchSms (organization: string, requestModel: CreateSingleBatchSmsRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: CreateSingleBatchSuccessResponse;  }> {
+    public async singleBatchCreateSingleBatchSms (organization: string, requestModel: CreateSingleBatchSmsRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: CreateSingleBatchSuccessResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/journeys/singlebatch/sms'
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
         let localVarQueryParameters: any = {};
@@ -464,7 +464,7 @@ export class SingleBatchApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: CreateSingleBatchSuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: CreateSingleBatchSuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -486,7 +486,7 @@ export class SingleBatchApi {
      * @param apiName Parameter represents API name of the single batch journey.
      * @param organization 
      */
-    public async singleBatchDelete (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: DeleteJourneySuccessResponse;  }> {
+    public async singleBatchDelete (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: DeleteJourneySuccessResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/journeys/singlebatch/{api_name}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
@@ -540,7 +540,7 @@ export class SingleBatchApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: DeleteJourneySuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: DeleteJourneySuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -562,7 +562,7 @@ export class SingleBatchApi {
      * @param apiName The name of the instance to get
      * @param organization 
      */
-    public async singleBatchGet (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: GetSingleBatchResponse;  }> {
+    public async singleBatchGet (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: GetSingleBatchResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/journeys/singlebatch/{api_name}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
@@ -616,7 +616,7 @@ export class SingleBatchApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: GetSingleBatchResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: GetSingleBatchResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -639,7 +639,7 @@ export class SingleBatchApi {
      * @param organization 
      * @param request Request model providing launch state and scheduling info. journey.scheduling.launch_date is required if journey.launch_state is \&quot;Schedule\&quot;.
      */
-    public async singleBatchLaunch (apiName: string, organization: string, request: LaunchSingleBatchRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: LaunchSingleBatchJourneySuccessResponse;  }> {
+    public async singleBatchLaunch (apiName: string, organization: string, request: LaunchSingleBatchRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: LaunchSingleBatchJourneySuccessResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/journeys/singlebatch/{api_name}/launch'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
@@ -699,7 +699,7 @@ export class SingleBatchApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: LaunchSingleBatchJourneySuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: LaunchSingleBatchJourneySuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -720,7 +720,7 @@ export class SingleBatchApi {
      * @summary Use this endpoint to retrieve all journeys on the given organization of type Single Batch.
      * @param organization 
      */
-    public async singleBatchList (organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: Singlebatches;  }> {
+    public async singleBatchList (organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Singlebatches;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/journeys/singlebatch'
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
         let localVarQueryParameters: any = {};
@@ -768,7 +768,7 @@ export class SingleBatchApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: Singlebatches;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: Singlebatches;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -791,7 +791,7 @@ export class SingleBatchApi {
      * @param organization 
      * @param model Optionally, extra parameters required for triggering the execution can be provided through the model. journey.scheduling.launch_date is required if journey.launch_state is \&quot;Schedule\&quot;.
      */
-    public async singleBatchTrigger (apiName: string, organization: string, model: TriggerSingleBatchRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: TriggerSingleBatchResponse;  }> {
+    public async singleBatchTrigger (apiName: string, organization: string, model: TriggerSingleBatchRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: TriggerSingleBatchResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/journeys/singlebatch/{api_name}/trigger'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
@@ -851,7 +851,7 @@ export class SingleBatchApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: TriggerSingleBatchResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: TriggerSingleBatchResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);

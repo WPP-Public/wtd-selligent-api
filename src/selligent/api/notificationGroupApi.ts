@@ -99,7 +99,7 @@ export class NotificationGroupApi {
      * @summary Use this endpoint to create a new notification group.
      * @param model The model object consists notification group details that are to used to create the notification group
      */
-    public async notificationGroupCreateNotificationGroup (model: CreateNotificationGroupApiRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: CreateNotificationGroupSuccessExampleResponse;  }> {
+    public async notificationGroupCreateNotificationGroup (model: CreateNotificationGroupApiRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: CreateNotificationGroupSuccessExampleResponse;  }> {
         const localVarPath = this.basePath + '/notificationgroups';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -147,7 +147,7 @@ export class NotificationGroupApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: CreateNotificationGroupSuccessExampleResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: CreateNotificationGroupSuccessExampleResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -168,7 +168,7 @@ export class NotificationGroupApi {
      * @summary Use this endpoint to delete a notification group.
      * @param apiName API name of the notification group to be deleted
      */
-    public async notificationGroupDeleteNotificationGroup (apiName: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: DeleteNotificationGroupSuccessResponse;  }> {
+    public async notificationGroupDeleteNotificationGroup (apiName: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: DeleteNotificationGroupSuccessResponse;  }> {
         const localVarPath = this.basePath + '/notificationgroups/{api_name}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)));
         let localVarQueryParameters: any = {};
@@ -216,7 +216,7 @@ export class NotificationGroupApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: DeleteNotificationGroupSuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: DeleteNotificationGroupSuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -237,7 +237,7 @@ export class NotificationGroupApi {
      * @summary Use this endpoint to get details of notification group with given API name.
      * @param apiName Parameter to specify API name of the notification group.
      */
-    public async notificationGroupGetNotificationGroup (apiName: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: NotificationGroupResponseModel;  }> {
+    public async notificationGroupGetNotificationGroup (apiName: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: NotificationGroupResponseModel;  }> {
         const localVarPath = this.basePath + '/notificationgroups/{api_name}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)));
         let localVarQueryParameters: any = {};
@@ -285,7 +285,7 @@ export class NotificationGroupApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: NotificationGroupResponseModel;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: NotificationGroupResponseModel;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -305,7 +305,7 @@ export class NotificationGroupApi {
      * 
      * @summary Use this endpoint to retrieve all the notification groups.
      */
-    public async notificationGroupRetrieveNotificationGroups (options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: RetrieveAllNotificationGroupsSuccessExampleResponse;  }> {
+    public async notificationGroupRetrieveNotificationGroups (options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: RetrieveAllNotificationGroupsSuccessExampleResponse;  }> {
         const localVarPath = this.basePath + '/notificationgroups';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -347,7 +347,7 @@ export class NotificationGroupApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: RetrieveAllNotificationGroupsSuccessExampleResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: RetrieveAllNotificationGroupsSuccessExampleResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -369,7 +369,7 @@ export class NotificationGroupApi {
      * @param apiName API name of the notification group to be updated
      * @param model The model object consists notification group details that are to used to update the notification group
      */
-    public async notificationGroupUpdateNotificationGroup (apiName: string, model: UpdateNotificationGroupApiRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: UpdateNotificationGroupSuccessExampleResponse;  }> {
+    public async notificationGroupUpdateNotificationGroup (apiName: string, model: UpdateNotificationGroupApiRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: UpdateNotificationGroupSuccessExampleResponse;  }> {
         const localVarPath = this.basePath + '/notificationgroups/{api_name}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)));
         let localVarQueryParameters: any = {};
@@ -423,7 +423,7 @@ export class NotificationGroupApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: UpdateNotificationGroupSuccessExampleResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: UpdateNotificationGroupSuccessExampleResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);

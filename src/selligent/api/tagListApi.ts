@@ -99,7 +99,7 @@ export class TagListApi {
      * @summary Use this endpoint to create a Tag list.
      * @param model The model object consists of Tag list details that are to be used to create the Tag list.
      */
-    public async tagListCreateTagList (model: CreateTagListApiRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: CreateTaglistSuccessResponse;  }> {
+    public async tagListCreateTagList (model: CreateTagListApiRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: CreateTaglistSuccessResponse;  }> {
         const localVarPath = this.basePath + '/taglists';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -147,7 +147,7 @@ export class TagListApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: CreateTaglistSuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: CreateTaglistSuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -168,7 +168,7 @@ export class TagListApi {
      * @summary Use this endpoint to delete an existing Tag list.
      * @param apiName Parameter to specify existing apiname of Tag list.
      */
-    public async tagListDeleteTagList (apiName: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: DeleteTaglistSuccessResponse;  }> {
+    public async tagListDeleteTagList (apiName: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: DeleteTaglistSuccessResponse;  }> {
         const localVarPath = this.basePath + '/taglists/{api_name}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)));
         let localVarQueryParameters: any = {};
@@ -216,7 +216,7 @@ export class TagListApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: DeleteTaglistSuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: DeleteTaglistSuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -240,7 +240,7 @@ export class TagListApi {
      * @param skip Optional parameter to specify index to start picking Tag lists from.
      * @param take Optional parameter to specify count for the number of Tag lists to be taken.
      */
-    public async tagListGetOrganizationTagLists (organization: string, search?: string, skip?: number, take?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: RetrieveTaglistsSuccessExampleResponse;  }> {
+    public async tagListGetOrganizationTagLists (organization: string, search?: string, skip?: number, take?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: RetrieveTaglistsSuccessExampleResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/taglists'
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
         let localVarQueryParameters: any = {};
@@ -300,7 +300,7 @@ export class TagListApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: RetrieveTaglistsSuccessExampleResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: RetrieveTaglistsSuccessExampleResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -321,7 +321,7 @@ export class TagListApi {
      * @summary Use this endpoint to get details of Tag list with given API name.
      * @param apiName Parameter to specify API name of the Tag list.
      */
-    public async tagListGetTagList (apiName: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: TagListDetailsResponseModel;  }> {
+    public async tagListGetTagList (apiName: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: TagListDetailsResponseModel;  }> {
         const localVarPath = this.basePath + '/taglists/{api_name}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)));
         let localVarQueryParameters: any = {};
@@ -369,7 +369,7 @@ export class TagListApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: TagListDetailsResponseModel;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: TagListDetailsResponseModel;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -392,7 +392,7 @@ export class TagListApi {
      * @param skip Optional parameter to specify index to start picking Tag lists from.
      * @param take Optional parameter to specify count for the number of Tag lists to be taken.
      */
-    public async tagListGetTagLists (search?: string, skip?: number, take?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: RetrieveTaglistsSuccessExampleResponse;  }> {
+    public async tagListGetTagLists (search?: string, skip?: number, take?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: RetrieveTaglistsSuccessExampleResponse;  }> {
         const localVarPath = this.basePath + '/taglists';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -446,7 +446,7 @@ export class TagListApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: RetrieveTaglistsSuccessExampleResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: RetrieveTaglistsSuccessExampleResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -468,7 +468,7 @@ export class TagListApi {
      * @param apiName API name of the Tag list to be updated.
      * @param model The model object consists of Tag list details that are to be used to update the Tag list.
      */
-    public async tagListUpdateTagList (apiName: string, model: UpdateTagListApiRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: UpdateTaglistSuccessResponse;  }> {
+    public async tagListUpdateTagList (apiName: string, model: UpdateTagListApiRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: UpdateTaglistSuccessResponse;  }> {
         const localVarPath = this.basePath + '/taglists/{api_name}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)));
         let localVarQueryParameters: any = {};
@@ -522,7 +522,7 @@ export class TagListApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: UpdateTaglistSuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: UpdateTaglistSuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);

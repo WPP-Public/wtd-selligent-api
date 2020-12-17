@@ -92,7 +92,7 @@ export class DataExportApi {
      * @param apiName API name of the data export to be deleted
      * @param organization 
      */
-    public async dataExportDeleteDataExport (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: DeleteDataExportSuccessResponse;  }> {
+    public async dataExportDeleteDataExport (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: DeleteDataExportSuccessResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/exports/{api_name}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
@@ -146,7 +146,7 @@ export class DataExportApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: DeleteDataExportSuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: DeleteDataExportSuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);

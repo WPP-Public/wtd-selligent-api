@@ -90,7 +90,7 @@ export class OrganizationApi {
      * @summary Use this endpoint to retrieve the details of this organization set up on your instance of Selligent Marketing Cloud.
      * @param organization 
      */
-    public async organizationGet (organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: Organization;  }> {
+    public async organizationGet (organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Organization;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}'
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
         let localVarQueryParameters: any = {};
@@ -138,7 +138,7 @@ export class OrganizationApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: Organization;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: Organization;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);

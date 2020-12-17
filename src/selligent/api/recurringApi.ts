@@ -92,7 +92,7 @@ export class RecurringApi {
      * @param apiName Parameter represents API name of the recurring journey.
      * @param organization 
      */
-    public async recurringDelete (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: DeleteJourneySuccessResponse;  }> {
+    public async recurringDelete (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: DeleteJourneySuccessResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/journeys/recurring/{api_name}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
@@ -146,7 +146,7 @@ export class RecurringApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: DeleteJourneySuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: DeleteJourneySuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -168,7 +168,7 @@ export class RecurringApi {
      * @param apiName Parameter represents API name of the recurring journey.
      * @param organization 
      */
-    public async recurringGet (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: JourneyDetailsResponseModel;  }> {
+    public async recurringGet (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: JourneyDetailsResponseModel;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/journeys/recurring/{api_name}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
@@ -222,7 +222,7 @@ export class RecurringApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: JourneyDetailsResponseModel;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: JourneyDetailsResponseModel;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);

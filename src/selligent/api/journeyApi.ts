@@ -90,7 +90,7 @@ export class JourneyApi {
      * @summary Use this endpoint to retrieve an overview of the last 1000 created journeys with a valid api_name, set up in the given organization.
      * @param organization 
      */
-    public async journeyGet (organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: Journeys;  }> {
+    public async journeyGet (organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Journeys;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/journeys'
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
         let localVarQueryParameters: any = {};
@@ -138,7 +138,7 @@ export class JourneyApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: Journeys;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: Journeys;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);

@@ -105,7 +105,7 @@ export class ContentApi {
      * @param model This CreateEmailMessageModel model have information related to email message
      * @param publish Parameter indicating whether the content should be published. [Default: false]
      */
-    public async contentCreateEmailContent (organization: string, model: CreateEmailMessageModel, publish?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: CreateEmailMessageContentSuccessResponse;  }> {
+    public async contentCreateEmailContent (organization: string, model: CreateEmailMessageModel, publish?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: CreateEmailMessageContentSuccessResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/content/email'
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
         let localVarQueryParameters: any = {};
@@ -163,7 +163,7 @@ export class ContentApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: CreateEmailMessageContentSuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: CreateEmailMessageContentSuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -186,7 +186,7 @@ export class ContentApi {
      * @param model This CreateMobileMessageModel model have information related to Mobile push content
      * @param publish Parameter indicating whether the content should be published. [Default: false]
      */
-    public async contentCreateMobileContent (organization: string, model: CreateMobileMessageModel, publish?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: CreateMobileMessageContentSuccessResponse;  }> {
+    public async contentCreateMobileContent (organization: string, model: CreateMobileMessageModel, publish?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: CreateMobileMessageContentSuccessResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/content/mobile'
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
         let localVarQueryParameters: any = {};
@@ -244,7 +244,7 @@ export class ContentApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: CreateMobileMessageContentSuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: CreateMobileMessageContentSuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -267,7 +267,7 @@ export class ContentApi {
      * @param model This CreatePageModel model have information related to Mobile push content
      * @param publish Parameter indicating whether the content should be published. [Default: false]
      */
-    public async contentCreatePageContent (organization: string, model: CreatePageModel, publish?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: CreatePageContentSuccessResponse;  }> {
+    public async contentCreatePageContent (organization: string, model: CreatePageModel, publish?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: CreatePageContentSuccessResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/content/page'
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
         let localVarQueryParameters: any = {};
@@ -325,7 +325,7 @@ export class ContentApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: CreatePageContentSuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: CreatePageContentSuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -348,7 +348,7 @@ export class ContentApi {
      * @param model This CreateSMSModel model have information related to SMS content
      * @param publish Parameter indicating whether the content should be published. [Default: false]
      */
-    public async contentCreateSMSContent (organization: string, model: CreateSmsModel, publish?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: CreateSmsContentSuccessResponse;  }> {
+    public async contentCreateSMSContent (organization: string, model: CreateSmsModel, publish?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: CreateSmsContentSuccessResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/content/sms'
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
         let localVarQueryParameters: any = {};
@@ -406,7 +406,7 @@ export class ContentApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: CreateSmsContentSuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: CreateSmsContentSuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -428,7 +428,7 @@ export class ContentApi {
      * @param apiName Parameter represents API name of the content.
      * @param organization 
      */
-    public async contentDelete (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: DeleteContentSuccessResponse;  }> {
+    public async contentDelete (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: DeleteContentSuccessResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/content/{api_name}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
@@ -482,7 +482,7 @@ export class ContentApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: DeleteContentSuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: DeleteContentSuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -504,7 +504,7 @@ export class ContentApi {
      * @param apiName Parameter represents API name of the content.
      * @param organization 
      */
-    public async contentGetContent (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: ContentDetailsResponseModel;  }> {
+    public async contentGetContent (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: ContentDetailsResponseModel;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/content/{api_name}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
@@ -558,7 +558,7 @@ export class ContentApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: ContentDetailsResponseModel;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: ContentDetailsResponseModel;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);

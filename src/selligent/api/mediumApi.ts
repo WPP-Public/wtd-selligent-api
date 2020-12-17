@@ -103,7 +103,7 @@ export class MediumApi {
      * @summary Use this endpoint to create a FTP medium.
      * @param model The model object consists medium details that are to used to create the medium
      */
-    public async mediumCreateFtpMedium (model: CreateFtpMediumApiRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: CreateMediumSuccessExampleResponse;  }> {
+    public async mediumCreateFtpMedium (model: CreateFtpMediumApiRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: CreateMediumSuccessExampleResponse;  }> {
         const localVarPath = this.basePath + '/mediums/ftp';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -151,7 +151,7 @@ export class MediumApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: CreateMediumSuccessExampleResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: CreateMediumSuccessExampleResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -172,7 +172,7 @@ export class MediumApi {
      * @summary Use this endpoint to create a Repository medium.
      * @param model The model object consists medium details that are to used to create the medium
      */
-    public async mediumCreateRepositoryMedium (model: CreateRepositoryMediumApiRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: CreateMediumSuccessExampleResponse;  }> {
+    public async mediumCreateRepositoryMedium (model: CreateRepositoryMediumApiRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: CreateMediumSuccessExampleResponse;  }> {
         const localVarPath = this.basePath + '/mediums/repository';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -220,7 +220,7 @@ export class MediumApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: CreateMediumSuccessExampleResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: CreateMediumSuccessExampleResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -241,7 +241,7 @@ export class MediumApi {
      * @summary Use this endpoint to create a URL medium.
      * @param model The model object consists medium details that are to used to create the medium
      */
-    public async mediumCreateUrlMedium (model: CreateUrlMediumApiRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: CreateMediumSuccessExampleResponse;  }> {
+    public async mediumCreateUrlMedium (model: CreateUrlMediumApiRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: CreateMediumSuccessExampleResponse;  }> {
         const localVarPath = this.basePath + '/mediums/url';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -289,7 +289,7 @@ export class MediumApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: CreateMediumSuccessExampleResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: CreateMediumSuccessExampleResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -310,7 +310,7 @@ export class MediumApi {
      * @summary Use this endpoint to delete a medium.
      * @param apiName API name of the medium to be deleted
      */
-    public async mediumDeleteMedium (apiName: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: DeleteMediumSuccessResponse;  }> {
+    public async mediumDeleteMedium (apiName: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: DeleteMediumSuccessResponse;  }> {
         const localVarPath = this.basePath + '/mediums/{api_name}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)));
         let localVarQueryParameters: any = {};
@@ -358,7 +358,7 @@ export class MediumApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: DeleteMediumSuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: DeleteMediumSuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -379,7 +379,7 @@ export class MediumApi {
      * @summary Use this endpoint to retrieve a medium (Ftp/Url/Repository) details.
      * @param apiName Parameter to specify medium API name.
      */
-    public async mediumGetMedium (apiName: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: RetrieveMediumSuccessResponse;  }> {
+    public async mediumGetMedium (apiName: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: RetrieveMediumSuccessResponse;  }> {
         const localVarPath = this.basePath + '/mediums/{api_name}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)));
         let localVarQueryParameters: any = {};
@@ -427,7 +427,7 @@ export class MediumApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: RetrieveMediumSuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: RetrieveMediumSuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -451,7 +451,7 @@ export class MediumApi {
      * @param skip Optional parameter to specify index to start picking medium items from.
      * @param take Optional parameter to specify count for the number of medium items to be taken.
      */
-    public async mediumGetMediums (filter?: string, search?: string, skip?: number, take?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: Mediums;  }> {
+    public async mediumGetMediums (filter?: string, search?: string, skip?: number, take?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Mediums;  }> {
         const localVarPath = this.basePath + '/mediums';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -509,7 +509,7 @@ export class MediumApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: Mediums;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: Mediums;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -534,7 +534,7 @@ export class MediumApi {
      * @param skip Optional parameter to specify index to start picking medium items from.
      * @param take Optional parameter to specify count for the number of medium items to be taken.
      */
-    public async mediumGetOrganizationMediums (organization: string, filter?: string, search?: string, skip?: number, take?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: Mediums;  }> {
+    public async mediumGetOrganizationMediums (organization: string, filter?: string, search?: string, skip?: number, take?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Mediums;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/mediums'
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
         let localVarQueryParameters: any = {};
@@ -598,7 +598,7 @@ export class MediumApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: Mediums;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: Mediums;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -620,7 +620,7 @@ export class MediumApi {
      * @param apiName API name of the FTP medium to be updated
      * @param model The model object consists medium details that are to used to update the FTP medium
      */
-    public async mediumUpdateFtpMedium (apiName: string, model: UpdateFtpMediumApiRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: UpdateMediumSuccessResponse;  }> {
+    public async mediumUpdateFtpMedium (apiName: string, model: UpdateFtpMediumApiRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: UpdateMediumSuccessResponse;  }> {
         const localVarPath = this.basePath + '/mediums/ftp/{api_name}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)));
         let localVarQueryParameters: any = {};
@@ -674,7 +674,7 @@ export class MediumApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: UpdateMediumSuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: UpdateMediumSuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -696,7 +696,7 @@ export class MediumApi {
      * @param apiName API name of the Repository medium to be updated
      * @param model The model object consists medium details that are to used to update the Repository medium
      */
-    public async mediumUpdateRepositoryMedium (apiName: string, model: UpdateRepositoryMediumApiRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: UpdateMediumSuccessResponse;  }> {
+    public async mediumUpdateRepositoryMedium (apiName: string, model: UpdateRepositoryMediumApiRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: UpdateMediumSuccessResponse;  }> {
         const localVarPath = this.basePath + '/mediums/repository/{api_name}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)));
         let localVarQueryParameters: any = {};
@@ -750,7 +750,7 @@ export class MediumApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: UpdateMediumSuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: UpdateMediumSuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -772,7 +772,7 @@ export class MediumApi {
      * @param apiName API name of the URL medium to be updated
      * @param model The model object consists medium details that are to used to update the URL medium
      */
-    public async mediumUpdateUrlMedium (apiName: string, model: UpdateUrlMediumApiRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: UpdateMediumSuccessResponse;  }> {
+    public async mediumUpdateUrlMedium (apiName: string, model: UpdateUrlMediumApiRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: UpdateMediumSuccessResponse;  }> {
         const localVarPath = this.basePath + '/mediums/url/{api_name}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)));
         let localVarQueryParameters: any = {};
@@ -826,7 +826,7 @@ export class MediumApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: UpdateMediumSuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: UpdateMediumSuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);

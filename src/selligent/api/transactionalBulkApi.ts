@@ -91,7 +91,7 @@ export class TransactionalBulkApi {
      * @param apiName The name of execution that should be sent
      * @param organization 
      */
-    public async transactionalBulkSend (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: SendTransactionalBulkResponse;  }> {
+    public async transactionalBulkSend (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: SendTransactionalBulkResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/journeys/transactional/bulk/{api_name}/send'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
@@ -145,7 +145,7 @@ export class TransactionalBulkApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: SendTransactionalBulkResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: SendTransactionalBulkResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);

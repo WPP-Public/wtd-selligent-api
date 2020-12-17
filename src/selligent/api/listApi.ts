@@ -154,7 +154,7 @@ export class ListApi {
      * @param organization 
      * @param model The model object consists custom event details that are to used to create the custom event
      */
-    public async listCreateCustomEvent (apiName: string, organization: string, model: CreateCustomEventRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: CreateCustomEventSuccessExampleResponse;  }> {
+    public async listCreateCustomEvent (apiName: string, organization: string, model: CreateCustomEventRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: CreateCustomEventSuccessExampleResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/lists/{api_name}/customevents'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
@@ -214,7 +214,7 @@ export class ListApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: CreateCustomEventSuccessExampleResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: CreateCustomEventSuccessExampleResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -238,7 +238,7 @@ export class ListApi {
      * @param organization 
      * @param model The model object consists custom event details that are to used to create a custom event field
      */
-    public async listCreateCustomEventFields (apiName: string, customEventName: string, organization: string, model: CreateCustomEventFieldsRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: CreateCustomEventFieldsSuccessResponse;  }> {
+    public async listCreateCustomEventFields (apiName: string, customEventName: string, organization: string, model: CreateCustomEventFieldsRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: CreateCustomEventFieldsSuccessResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/lists/{api_name}/customevents/{custom_event_name}/fields'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'custom_event_name' + '}', encodeURIComponent(String(customEventName)))
@@ -304,7 +304,7 @@ export class ListApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: CreateCustomEventFieldsSuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: CreateCustomEventFieldsSuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -326,7 +326,7 @@ export class ListApi {
      * @param organization 
      * @param model This CreateListRequestModel model parameter having information about list as name, api_name, listType, description and tags to be created .
      */
-    public async listCreateList (organization: string, model: CreateListRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: CreateListSuccessResponse;  }> {
+    public async listCreateList (organization: string, model: CreateListRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: CreateListSuccessResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/lists'
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
         let localVarQueryParameters: any = {};
@@ -380,7 +380,7 @@ export class ListApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: CreateListSuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: CreateListSuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -403,7 +403,7 @@ export class ListApi {
      * @param organization 
      * @param model The model containing the data that should be sent
      */
-    public async listCreateListFields (apiName: string, organization: string, model: CreateListFieldsRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: CreateFieldsSuccessResponse;  }> {
+    public async listCreateListFields (apiName: string, organization: string, model: CreateListFieldsRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: CreateFieldsSuccessResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/lists/{api_name}/fields'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
@@ -463,7 +463,7 @@ export class ListApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: CreateFieldsSuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: CreateFieldsSuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -486,7 +486,7 @@ export class ListApi {
      * @param organization 
      * @param model 
      */
-    public async listCreateListRelations (apiName: string, organization: string, model: CreateListRelationsRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: CreateListRelationsSuccessResponse;  }> {
+    public async listCreateListRelations (apiName: string, organization: string, model: CreateListRelationsRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: CreateListRelationsSuccessResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/lists/{api_name}/relations'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
@@ -546,7 +546,7 @@ export class ListApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: CreateListRelationsSuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: CreateListRelationsSuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -569,7 +569,7 @@ export class ListApi {
      * @param organization 
      * @param model 
      */
-    public async listCreateStaticSegment (apiName: string, organization: string, model: CreateSegmentRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: CreateSegmentSuccessResponse;  }> {
+    public async listCreateStaticSegment (apiName: string, organization: string, model: CreateSegmentRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: CreateSegmentSuccessResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/lists/{api_name}/segments/static'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
@@ -629,7 +629,7 @@ export class ListApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: CreateSegmentSuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: CreateSegmentSuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -652,7 +652,7 @@ export class ListApi {
      * @param organization 
      * @param dropTable Optional Parameter to specify if the associated table is to be deleted.
      */
-    public async listDelete (apiName: string, organization: string, dropTable?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: DeleteListSuccessResponse;  }> {
+    public async listDelete (apiName: string, organization: string, dropTable?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: DeleteListSuccessResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/lists/{api_name}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
@@ -710,7 +710,7 @@ export class ListApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: DeleteListSuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: DeleteListSuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -734,7 +734,7 @@ export class ListApi {
      * @param organization 
      * @param dropTable Optional Parameter to specify if the associated table is to be deleted.
      */
-    public async listDeleteCustomEvent (apiName: string, customEventName: string, organization: string, dropTable?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: DeleteCustomEventSuccessResponse;  }> {
+    public async listDeleteCustomEvent (apiName: string, customEventName: string, organization: string, dropTable?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: DeleteCustomEventSuccessResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/lists/{api_name}/customevents/{custom_event_name}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'custom_event_name' + '}', encodeURIComponent(String(customEventName)))
@@ -798,7 +798,7 @@ export class ListApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: DeleteCustomEventSuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: DeleteCustomEventSuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -822,7 +822,7 @@ export class ListApi {
      * @param fieldName Parameter to specify name of the custom event field.
      * @param organization 
      */
-    public async listDeleteCustomEventField (apiName: string, customEventName: string, fieldName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: DeleteCustomEventFieldSuccessResponse;  }> {
+    public async listDeleteCustomEventField (apiName: string, customEventName: string, fieldName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: DeleteCustomEventFieldSuccessResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/lists/{api_name}/customevents/{custom_event_name}/fields/{field_name}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'custom_event_name' + '}', encodeURIComponent(String(customEventName)))
@@ -888,7 +888,7 @@ export class ListApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: DeleteCustomEventFieldSuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: DeleteCustomEventFieldSuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -911,7 +911,7 @@ export class ListApi {
      * @param name Parameter to specify name of the field
      * @param organization 
      */
-    public async listDeleteListField (apiName: string, name: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: DeleteListFieldSuccessResponse;  }> {
+    public async listDeleteListField (apiName: string, name: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: DeleteListFieldSuccessResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/lists/{api_name}/fields/{name}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'name' + '}', encodeURIComponent(String(name)))
@@ -971,7 +971,7 @@ export class ListApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: DeleteListFieldSuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: DeleteListFieldSuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -994,7 +994,7 @@ export class ListApi {
      * @param recordId Required Parameter to specify if the associated record is to be deleted.
      * @param organization 
      */
-    public async listDeleteListRecord (apiName: string, recordId: number, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: DeleteListRecordSuccessResponse;  }> {
+    public async listDeleteListRecord (apiName: string, recordId: number, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: DeleteListRecordSuccessResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/lists/{api_name}/records/{record_id}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'record_id' + '}', encodeURIComponent(String(recordId)))
@@ -1054,7 +1054,7 @@ export class ListApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: DeleteListRecordSuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: DeleteListRecordSuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -1077,7 +1077,7 @@ export class ListApi {
      * @param scope 
      * @param organization 
      */
-    public async listDeleteRelation (apiName: string, scope: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: DeleteListRelationSuccessResponse;  }> {
+    public async listDeleteRelation (apiName: string, scope: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: DeleteListRelationSuccessResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/lists/{api_name}/relations/{scope}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'scope' + '}', encodeURIComponent(String(scope)))
@@ -1137,7 +1137,7 @@ export class ListApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: DeleteListRelationSuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: DeleteListRelationSuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -1160,7 +1160,7 @@ export class ListApi {
      * @param segmentApiName Parameter to specify API name of the segment.
      * @param organization 
      */
-    public async listDeleteSegment (apiName: string, segmentApiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: DeleteSegmentSuccessResponse;  }> {
+    public async listDeleteSegment (apiName: string, segmentApiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: DeleteSegmentSuccessResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/lists/{api_name}/segments/{segment_api_name}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'segment_api_name' + '}', encodeURIComponent(String(segmentApiName)))
@@ -1220,7 +1220,7 @@ export class ListApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: DeleteSegmentSuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: DeleteSegmentSuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -1243,7 +1243,7 @@ export class ListApi {
      * @param channel Parameter to specify channel type of taglist engagement for the user list.
      * @param organization 
      */
-    public async listGetEngagementListStructure (apiName: string, channel: 'Email' | 'Sms' | 'Mobile' | 'Web', organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: RetrieveEngagementListStructureExampleResponseModel;  }> {
+    public async listGetEngagementListStructure (apiName: string, channel: 'Email' | 'Sms' | 'Mobile' | 'Web', organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: RetrieveEngagementListStructureExampleResponseModel;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/lists/{api_name}/engagement/{channel}/structure'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'channel' + '}', encodeURIComponent(String(channel)))
@@ -1303,7 +1303,7 @@ export class ListApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: RetrieveEngagementListStructureExampleResponseModel;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: RetrieveEngagementListStructureExampleResponseModel;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -1326,7 +1326,7 @@ export class ListApi {
      * @param channel Parameter to specify channel type of taglist interest for the user list.
      * @param organization 
      */
-    public async listGetInterestListStructure (apiName: string, channel: 'Email' | 'Sms' | 'Mobile' | 'Web', organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: RetrieveInterestListStructureSuccessExampleResponseModel;  }> {
+    public async listGetInterestListStructure (apiName: string, channel: 'Email' | 'Sms' | 'Mobile' | 'Web', organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: RetrieveInterestListStructureSuccessExampleResponseModel;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/lists/{api_name}/interest/{channel}/structure'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'channel' + '}', encodeURIComponent(String(channel)))
@@ -1386,7 +1386,7 @@ export class ListApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: RetrieveInterestListStructureSuccessExampleResponseModel;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: RetrieveInterestListStructureSuccessExampleResponseModel;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -1408,7 +1408,7 @@ export class ListApi {
      * @param apiName Parameter represents API name of the list.
      * @param organization 
      */
-    public async listGetList (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: ListDetailsResponseModel;  }> {
+    public async listGetList (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: ListDetailsResponseModel;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/lists/{api_name}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
@@ -1462,7 +1462,7 @@ export class ListApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: ListDetailsResponseModel;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: ListDetailsResponseModel;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -1484,7 +1484,7 @@ export class ListApi {
      * @param apiName Parameter for API name associated with a list
      * @param organization 
      */
-    public async listGetListFields (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: Fields;  }> {
+    public async listGetListFields (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Fields;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/lists/{api_name}/fields'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
@@ -1538,7 +1538,7 @@ export class ListApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: Fields;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: Fields;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -1560,7 +1560,7 @@ export class ListApi {
      * @param apiName Parameter to specify API name of the list.
      * @param organization 
      */
-    public async listGetListRecordsCount (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: ListRecordsCountSuccessResponse;  }> {
+    public async listGetListRecordsCount (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: ListRecordsCountSuccessResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/lists/{api_name}/records'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
@@ -1614,7 +1614,7 @@ export class ListApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: ListRecordsCountSuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: ListRecordsCountSuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -1637,7 +1637,7 @@ export class ListApi {
      * @param segmentApiName Parameter to specify API name of the segment
      * @param organization 
      */
-    public async listGetListSegment (apiName: string, segmentApiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: SegmentDetailsModel;  }> {
+    public async listGetListSegment (apiName: string, segmentApiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: SegmentDetailsModel;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/lists/{api_name}/segments/{segment_api_name}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'segment_api_name' + '}', encodeURIComponent(String(segmentApiName)))
@@ -1697,7 +1697,7 @@ export class ListApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: SegmentDetailsModel;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: SegmentDetailsModel;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -1723,7 +1723,7 @@ export class ListApi {
      * @param skip Optional parameter to specify index to start picking segment items from.
      * @param take Optional parameter to specify count for the number of segment items to be taken.
      */
-    public async listGetListSegments (apiName: string, organization: string, filter?: string, search?: string, skip?: number, take?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: Segments;  }> {
+    public async listGetListSegments (apiName: string, organization: string, filter?: string, search?: string, skip?: number, take?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Segments;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/lists/{api_name}/segments'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
@@ -1793,7 +1793,7 @@ export class ListApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: Segments;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: Segments;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -1818,7 +1818,7 @@ export class ListApi {
      * @param skip Optional parameter to specify index to start picking list items from.
      * @param take Optional parameter to specify count for the number of list items to be taken.
      */
-    public async listGetLists (organization: string, filter?: string, search?: string, skip?: number, take?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: Lists;  }> {
+    public async listGetLists (organization: string, filter?: string, search?: string, skip?: number, take?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Lists;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/lists'
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
         let localVarQueryParameters: any = {};
@@ -1882,7 +1882,7 @@ export class ListApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: Lists;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: Lists;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -1905,7 +1905,7 @@ export class ListApi {
      * @param scope Parameter to specify scope name of the relation
      * @param organization 
      */
-    public async listGetRelationDetails (apiName: string, scope: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: RelationDetailsModel;  }> {
+    public async listGetRelationDetails (apiName: string, scope: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: RelationDetailsModel;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/lists/{api_name}/relations/{scope}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'scope' + '}', encodeURIComponent(String(scope)))
@@ -1965,7 +1965,7 @@ export class ListApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: RelationDetailsModel;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: RelationDetailsModel;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -1988,7 +1988,7 @@ export class ListApi {
      * @param organization 
      * @param filter Optional parameter to filter relations by type. (OneToOne, OneToMany or ManyToOne)
      */
-    public async listGetRelations (apiName: string, organization: string, filter?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: Relations;  }> {
+    public async listGetRelations (apiName: string, organization: string, filter?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Relations;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/lists/{api_name}/relations'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
@@ -2046,7 +2046,7 @@ export class ListApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: Relations;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: Relations;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -2069,7 +2069,7 @@ export class ListApi {
      * @param customEventName Parameter to specify name of the custom event.
      * @param organization 
      */
-    public async listRetrieveCustomEvent (apiName: string, customEventName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: RetrieveCustomEventSuccessResponse;  }> {
+    public async listRetrieveCustomEvent (apiName: string, customEventName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: RetrieveCustomEventSuccessResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/lists/{api_name}/customevents/{custom_event_name}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'custom_event_name' + '}', encodeURIComponent(String(customEventName)))
@@ -2129,7 +2129,7 @@ export class ListApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: RetrieveCustomEventSuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: RetrieveCustomEventSuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -2152,7 +2152,7 @@ export class ListApi {
      * @param customEventName Parameter to specify name of the custom event.
      * @param organization 
      */
-    public async listRetrieveCustomEventFields (apiName: string, customEventName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: Fields;  }> {
+    public async listRetrieveCustomEventFields (apiName: string, customEventName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Fields;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/lists/{api_name}/customevents/{custom_event_name}/fields'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'custom_event_name' + '}', encodeURIComponent(String(customEventName)))
@@ -2212,7 +2212,7 @@ export class ListApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: Fields;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: Fields;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -2237,7 +2237,7 @@ export class ListApi {
      * @param skip Optional parameter to specify index to start picking custom event items from.
      * @param take Optional parameter to specify count for the number of custom event items to be taken.
      */
-    public async listRetrieveCustomEvents (apiName: string, organization: string, search?: string, skip?: number, take?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: CustomEvents;  }> {
+    public async listRetrieveCustomEvents (apiName: string, organization: string, search?: string, skip?: number, take?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: CustomEvents;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/lists/{api_name}/customevents'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
@@ -2303,7 +2303,7 @@ export class ListApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: CustomEvents;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: CustomEvents;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -2326,7 +2326,7 @@ export class ListApi {
      * @param customEventName Parameter to specify custom event name.
      * @param organization 
      */
-    public async listTriggerCustomEventResolverJourney (apiName: string, customEventName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: TriggerCustomEventAcceptedResponse;  }> {
+    public async listTriggerCustomEventResolverJourney (apiName: string, customEventName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: TriggerCustomEventAcceptedResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/lists/{api_name}/customevents/{custom_event_name}/trigger'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'custom_event_name' + '}', encodeURIComponent(String(customEventName)))
@@ -2386,7 +2386,7 @@ export class ListApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: TriggerCustomEventAcceptedResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: TriggerCustomEventAcceptedResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -2410,7 +2410,7 @@ export class ListApi {
      * @param organization 
      * @param model The model object consists custom event details that are to used to update the custom event
      */
-    public async listUpdateCustomEvent (apiName: string, customEventName: string, organization: string, model: UpdateCustomEventRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: UpdateCustomEventSuccessExampleResponse;  }> {
+    public async listUpdateCustomEvent (apiName: string, customEventName: string, organization: string, model: UpdateCustomEventRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: UpdateCustomEventSuccessExampleResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/lists/{api_name}/customevents/{custom_event_name}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'custom_event_name' + '}', encodeURIComponent(String(customEventName)))
@@ -2476,7 +2476,7 @@ export class ListApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: UpdateCustomEventSuccessExampleResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: UpdateCustomEventSuccessExampleResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -2501,7 +2501,7 @@ export class ListApi {
      * @param organization 
      * @param model The model object consists custom event field details that are to used to update a custom event field
      */
-    public async listUpdateCustomEventField (apiName: string, customEventName: string, fieldName: string, organization: string, model: UpdateCustomEventFieldRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: UpdateCustomEventFieldSuccessResponse;  }> {
+    public async listUpdateCustomEventField (apiName: string, customEventName: string, fieldName: string, organization: string, model: UpdateCustomEventFieldRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: UpdateCustomEventFieldSuccessResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/lists/{api_name}/customevents/{custom_event_name}/fields/{field_name}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'custom_event_name' + '}', encodeURIComponent(String(customEventName)))
@@ -2573,7 +2573,7 @@ export class ListApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: UpdateCustomEventFieldSuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: UpdateCustomEventFieldSuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -2596,7 +2596,7 @@ export class ListApi {
      * @param organization 
      * @param model The UpdateListRequestModel model parameter contains information about the list such as name, api_name, description, tags, email quaity, taglist_api_name (only for audience list) etc to be updated .
      */
-    public async listUpdateList (apiName: string, organization: string, model: UpdateListRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: UpdateListSuccessResponse;  }> {
+    public async listUpdateList (apiName: string, organization: string, model: UpdateListRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: UpdateListSuccessResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/lists/{api_name}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
@@ -2656,7 +2656,7 @@ export class ListApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: UpdateListSuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: UpdateListSuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -2680,7 +2680,7 @@ export class ListApi {
      * @param organization 
      * @param updateFieldRequestModel Parameter for details containing the new field information.
      */
-    public async listUpdateListField (apiName: string, name: string, organization: string, updateFieldRequestModel: UpdateListFieldRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: UpdateFieldSuccessResponse;  }> {
+    public async listUpdateListField (apiName: string, name: string, organization: string, updateFieldRequestModel: UpdateListFieldRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: UpdateFieldSuccessResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/lists/{api_name}/fields/{name}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'name' + '}', encodeURIComponent(String(name)))
@@ -2746,7 +2746,7 @@ export class ListApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: UpdateFieldSuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: UpdateFieldSuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -2770,7 +2770,7 @@ export class ListApi {
      * @param organization 
      * @param model Object to specify updates to a relation
      */
-    public async listUpdateListRelation (apiName: string, scope: string, organization: string, model: UpdateListRelationRequest, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: UpdateListRelationSuccessResponse;  }> {
+    public async listUpdateListRelation (apiName: string, scope: string, organization: string, model: UpdateListRelationRequest, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: UpdateListRelationSuccessResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/lists/{api_name}/relations/{scope}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'scope' + '}', encodeURIComponent(String(scope)))
@@ -2836,7 +2836,7 @@ export class ListApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: UpdateListRelationSuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: UpdateListRelationSuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);

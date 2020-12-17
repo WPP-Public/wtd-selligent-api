@@ -97,7 +97,7 @@ export class CustomApi {
      * @param apiName Parameter represents API name of the custom journey.
      * @param organization 
      */
-    public async customDelete (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: DeleteJourneySuccessResponse;  }> {
+    public async customDelete (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: DeleteJourneySuccessResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/journeys/custom/{api_name}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
@@ -151,7 +151,7 @@ export class CustomApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: DeleteJourneySuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: DeleteJourneySuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -173,7 +173,7 @@ export class CustomApi {
      * @param apiName Parameter represents API name of the custom journey.
      * @param organization 
      */
-    public async customGet (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: JourneyDetailsResponseModel;  }> {
+    public async customGet (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: JourneyDetailsResponseModel;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/journeys/custom/{api_name}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
@@ -227,7 +227,7 @@ export class CustomApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: JourneyDetailsResponseModel;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: JourneyDetailsResponseModel;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -250,7 +250,7 @@ export class CustomApi {
      * @param entrypointApiName the api name of the entry point defined in the custom journey.
      * @param organization 
      */
-    public async customGetEntryPoint (apiName: string, entrypointApiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: JourneyEntryPointResponse;  }> {
+    public async customGetEntryPoint (apiName: string, entrypointApiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: JourneyEntryPointResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/journeys/custom/{api_name}/entrypoints/{entrypoint_api_name}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'entrypoint_api_name' + '}', encodeURIComponent(String(entrypointApiName)))
@@ -310,7 +310,7 @@ export class CustomApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: JourneyEntryPointResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: JourneyEntryPointResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -332,7 +332,7 @@ export class CustomApi {
      * @param apiName the api name of the custom journey.
      * @param organization 
      */
-    public async customGetEntryPoints (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: JourneyEntryPointInfoResponse;  }> {
+    public async customGetEntryPoints (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: JourneyEntryPointInfoResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/journeys/custom/{api_name}/entrypoints'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
@@ -386,7 +386,7 @@ export class CustomApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: JourneyEntryPointInfoResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: JourneyEntryPointInfoResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -410,7 +410,7 @@ export class CustomApi {
      * @param organization 
      * @param model 
      */
-    public async customTriggerEntryPoint (apiName: string, entrypointApiName: string, organization: string, model: TriggerJourneyEntryPointsRequest, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: TriggerJourneyEntryPointResponse;  }> {
+    public async customTriggerEntryPoint (apiName: string, entrypointApiName: string, organization: string, model: TriggerJourneyEntryPointsRequest, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: TriggerJourneyEntryPointResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/journeys/custom/{api_name}/entrypoints/{entrypoint_api_name}/trigger'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'entrypoint_api_name' + '}', encodeURIComponent(String(entrypointApiName)))
@@ -476,7 +476,7 @@ export class CustomApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: TriggerJourneyEntryPointResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: TriggerJourneyEntryPointResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);

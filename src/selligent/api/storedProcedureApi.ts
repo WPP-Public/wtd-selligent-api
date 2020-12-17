@@ -99,7 +99,7 @@ export class StoredProcedureApi {
      * @summary Use this endpoint to create a stored procedure.
      * @param model Parameter to specify stored procedure details.
      */
-    public async storedProcedureCreateStoredProcedure (model: CreateStoredProcedureModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: CreateStoredProcedureSuccessResponse;  }> {
+    public async storedProcedureCreateStoredProcedure (model: CreateStoredProcedureModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: CreateStoredProcedureSuccessResponse;  }> {
         const localVarPath = this.basePath + '/storedprocedures';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -147,7 +147,7 @@ export class StoredProcedureApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: CreateStoredProcedureSuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: CreateStoredProcedureSuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -168,7 +168,7 @@ export class StoredProcedureApi {
      * @summary Use this endpoint to delete a existing stored procedure.
      * @param name Parameter to specify existing stored procedure.
      */
-    public async storedProcedureDelete (name: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: DeleteStoredProcedureSuccessResponse;  }> {
+    public async storedProcedureDelete (name: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: DeleteStoredProcedureSuccessResponse;  }> {
         const localVarPath = this.basePath + '/storedprocedures/{name}'
             .replace('{' + 'name' + '}', encodeURIComponent(String(name)));
         let localVarQueryParameters: any = {};
@@ -216,7 +216,7 @@ export class StoredProcedureApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: DeleteStoredProcedureSuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: DeleteStoredProcedureSuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -237,7 +237,7 @@ export class StoredProcedureApi {
      * @summary Use this endpoint to get details of stored procedure by the specified name.
      * @param name Parameter represents name of the stored procedure
      */
-    public async storedProcedureGetStoredProcedureDetails (name: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: StoredProcedureDetailsResponseModel;  }> {
+    public async storedProcedureGetStoredProcedureDetails (name: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: StoredProcedureDetailsResponseModel;  }> {
         const localVarPath = this.basePath + '/storedprocedures/{name}'
             .replace('{' + 'name' + '}', encodeURIComponent(String(name)));
         let localVarQueryParameters: any = {};
@@ -285,7 +285,7 @@ export class StoredProcedureApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: StoredProcedureDetailsResponseModel;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: StoredProcedureDetailsResponseModel;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -309,7 +309,7 @@ export class StoredProcedureApi {
      * @param skip Optional parameter to specify index to start picking stored procedure items from.
      * @param take Optional parameter to specify count for the number of stored procedure items to be taken.
      */
-    public async storedProcedureGetStoredProcedures (filter?: string, search?: string, skip?: number, take?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: Storedprocedures;  }> {
+    public async storedProcedureGetStoredProcedures (filter?: string, search?: string, skip?: number, take?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Storedprocedures;  }> {
         const localVarPath = this.basePath + '/storedprocedures';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -367,7 +367,7 @@ export class StoredProcedureApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: Storedprocedures;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: Storedprocedures;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -389,7 +389,7 @@ export class StoredProcedureApi {
      * @param name Parameter to specify store procedure name
      * @param model Parameter to update stored procedure details for given name.
      */
-    public async storedProcedureUpdateStoredProcedure (name: string, model: UpdateStoredProcedureModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: UpdateStoredProcedureSuccessResponse;  }> {
+    public async storedProcedureUpdateStoredProcedure (name: string, model: UpdateStoredProcedureModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: UpdateStoredProcedureSuccessResponse;  }> {
         const localVarPath = this.basePath + '/storedprocedures/{name}'
             .replace('{' + 'name' + '}', encodeURIComponent(String(name)));
         let localVarQueryParameters: any = {};
@@ -443,7 +443,7 @@ export class StoredProcedureApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: UpdateStoredProcedureSuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: UpdateStoredProcedureSuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);

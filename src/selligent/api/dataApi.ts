@@ -100,7 +100,7 @@ export class DataApi {
      * @param segmentApiName Parameter for API name associated with a segment
      * @param organization 
      */
-    public async dataClearStaticSegmentData (apiName: string, segmentApiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: ClearStaticSegmentDataSuccessResponse;  }> {
+    public async dataClearStaticSegmentData (apiName: string, segmentApiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: ClearStaticSegmentDataSuccessResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/lists/{api_name}/segments/{segment_api_name}/data/clear'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'segment_api_name' + '}', encodeURIComponent(String(segmentApiName)))
@@ -160,7 +160,7 @@ export class DataApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: ClearStaticSegmentDataSuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: ClearStaticSegmentDataSuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -187,7 +187,7 @@ export class DataApi {
      * @param mode Parameter indicates the mode of the data transfer (Sync or Stream). [Default: Sync]
      * @param errorHandling Parameter indicates error handling options whether to stop on error or continue on error
      */
-    public async dataDeleteData (apiName: string, keyFields: string, organization: string, jsondata: Array<Array<string>>, fields?: string, mode?: string, errorHandling?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: DeleteDataResponseModel;  }> {
+    public async dataDeleteData (apiName: string, keyFields: string, organization: string, jsondata: Array<Array<string>>, fields?: string, mode?: string, errorHandling?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: DeleteDataResponseModel;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/lists/{api_name}/data'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
@@ -268,7 +268,7 @@ export class DataApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: DeleteDataResponseModel;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: DeleteDataResponseModel;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -296,7 +296,7 @@ export class DataApi {
      * @param mode Parameter indicates the mode of the data transfer (Sync or Stream). [Default: Sync]
      * @param errorHandling Parameter indicates error handling options whether to stop on error or continue on error
      */
-    public async dataDeleteSegmentData (apiName: string, segmentApiName: string, keyFields: string, organization: string, jsondata: Array<Array<string>>, fields?: string, mode?: string, errorHandling?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: DeleteDataResponseModel;  }> {
+    public async dataDeleteSegmentData (apiName: string, segmentApiName: string, keyFields: string, organization: string, jsondata: Array<Array<string>>, fields?: string, mode?: string, errorHandling?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: DeleteDataResponseModel;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/lists/{api_name}/segments/{segment_api_name}/data'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'segment_api_name' + '}', encodeURIComponent(String(segmentApiName)))
@@ -383,7 +383,7 @@ export class DataApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: DeleteDataResponseModel;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: DeleteDataResponseModel;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -407,7 +407,7 @@ export class DataApi {
      * @param recordId Parameter for record id associated with a list.
      * @param organization 
      */
-    public async dataGetEngagementListRecord (apiName: string, channel: 'Email' | 'Sms' | 'Mobile' | 'Web', recordId: number, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: RetrieveEngagementListRecordExampleResponseModel;  }> {
+    public async dataGetEngagementListRecord (apiName: string, channel: 'Email' | 'Sms' | 'Mobile' | 'Web', recordId: number, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: RetrieveEngagementListRecordExampleResponseModel;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/lists/{api_name}/engagement/{channel}/data/{record_id}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'channel' + '}', encodeURIComponent(String(channel)))
@@ -473,7 +473,7 @@ export class DataApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: RetrieveEngagementListRecordExampleResponseModel;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: RetrieveEngagementListRecordExampleResponseModel;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -497,7 +497,7 @@ export class DataApi {
      * @param recordId Parameter for record id associated with a list.
      * @param organization 
      */
-    public async dataGetInterestListRecord (apiName: string, channel: 'Email' | 'Sms' | 'Mobile' | 'Web', recordId: number, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: RetrieveInterestListRecordExampleResponseModel;  }> {
+    public async dataGetInterestListRecord (apiName: string, channel: 'Email' | 'Sms' | 'Mobile' | 'Web', recordId: number, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: RetrieveInterestListRecordExampleResponseModel;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/lists/{api_name}/interest/{channel}/data/{record_id}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'channel' + '}', encodeURIComponent(String(channel)))
@@ -563,7 +563,7 @@ export class DataApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: RetrieveInterestListRecordExampleResponseModel;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: RetrieveInterestListRecordExampleResponseModel;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -594,7 +594,7 @@ export class DataApi {
      * @param createSegmentApiName Parameter indicates the api name of segment at the time of segment creation
      * @param errorHandling Parameter indicates error handling options whether to stop on error or continue on error
      */
-    public async dataLoadData (apiName: string, keyFields: string, organization: string, jsondata: Array<Array<string>>, fields?: string, mode?: string, deduplication?: string, dataImportOption?: string, createSegmentName?: string, createSegmentApiName?: string, errorHandling?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: LoadDataResponseModel;  }> {
+    public async dataLoadData (apiName: string, keyFields: string, organization: string, jsondata: Array<Array<string>>, fields?: string, mode?: string, deduplication?: string, dataImportOption?: string, createSegmentName?: string, createSegmentApiName?: string, errorHandling?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: LoadDataResponseModel;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/lists/{api_name}/data/load'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
@@ -691,7 +691,7 @@ export class DataApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: LoadDataResponseModel;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: LoadDataResponseModel;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -720,7 +720,7 @@ export class DataApi {
      * @param deduplication Parameter indicates the de-duplication option during an import data (ImportLastMatch or ImportFirstMatch). [Default: ImportLastMatch]
      * @param errorHandling Parameter indicates error handling options whether to stop on error or continue on error
      */
-    public async dataLoadSegmentData (apiName: string, segmentApiName: string, keyFields: string, organization: string, jsondata: Array<Array<string>>, fields?: string, mode?: string, deduplication?: string, errorHandling?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: LoadDataResponseModel;  }> {
+    public async dataLoadSegmentData (apiName: string, segmentApiName: string, keyFields: string, organization: string, jsondata: Array<Array<string>>, fields?: string, mode?: string, deduplication?: string, errorHandling?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: LoadDataResponseModel;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/lists/{api_name}/segments/{segment_api_name}/data/load'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'segment_api_name' + '}', encodeURIComponent(String(segmentApiName)))
@@ -811,7 +811,7 @@ export class DataApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: LoadDataResponseModel;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: LoadDataResponseModel;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -835,7 +835,7 @@ export class DataApi {
      * @param organization 
      * @param values Parameter contains a key value pair dictionary of the master record data or slave record data.
      */
-    public async dataSaveListData (apiName: string, keyfields: string, organization: string, values: { [key: string]: object; }, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: SaveListDataResponsed;  }> {
+    public async dataSaveListData (apiName: string, keyfields: string, organization: string, values: { [key: string]: object; }, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: SaveListDataResponsed;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/lists/{api_name}/data'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
@@ -904,7 +904,7 @@ export class DataApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: SaveListDataResponsed;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: SaveListDataResponsed;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -928,7 +928,7 @@ export class DataApi {
      * @param request Parameter specifies the details on the data that should be searched.
      * @param mode Parameter indicates the mode of the data transfer (Sync or Stream). [Default: Sync]
      */
-    public async dataSearchData (apiName: string, organization: string, request: SearchDataRequestModel, mode?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: SearchDataResponseModel;  }> {
+    public async dataSearchData (apiName: string, organization: string, request: SearchDataRequestModel, mode?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: SearchDataResponseModel;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/lists/{api_name}/data/search'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
@@ -992,7 +992,7 @@ export class DataApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: SearchDataResponseModel;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: SearchDataResponseModel;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -1017,7 +1017,7 @@ export class DataApi {
      * @param request Parameter specifies the details on the data that should be searched.
      * @param mode Parameter indicates the mode of the data transfer (Sync or Stream). [Default: Sync]
      */
-    public async dataSearchSegmentData (apiName: string, segmentApiName: string, organization: string, request: SearchDataRequestModel, mode?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async dataSearchSegmentData (apiName: string, segmentApiName: string, organization: string, request: SearchDataRequestModel, mode?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/lists/{api_name}/segments/{segment_api_name}/data/search'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'segment_api_name' + '}', encodeURIComponent(String(segmentApiName)))
@@ -1087,7 +1087,7 @@ export class DataApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);

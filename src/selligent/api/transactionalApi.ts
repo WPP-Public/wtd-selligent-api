@@ -99,7 +99,7 @@ export class TransactionalApi {
      * @param apiName Parameter represents API name of the transactional journey.
      * @param organization 
      */
-    public async transactionalDelete (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: DeleteJourneySuccessResponse;  }> {
+    public async transactionalDelete (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: DeleteJourneySuccessResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/journeys/transactional/{api_name}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
@@ -153,7 +153,7 @@ export class TransactionalApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: DeleteJourneySuccessResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: DeleteJourneySuccessResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -175,7 +175,7 @@ export class TransactionalApi {
      * @param apiName The name of the instance to get
      * @param organization 
      */
-    public async transactionalGet (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: TransactionalResponseModel;  }> {
+    public async transactionalGet (apiName: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: TransactionalResponseModel;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/journeys/transactional/{api_name}'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
@@ -229,7 +229,7 @@ export class TransactionalApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: TransactionalResponseModel;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: TransactionalResponseModel;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -251,7 +251,7 @@ export class TransactionalApi {
      * @param organization 
      * @param ids 
      */
-    public async transactionalGetStatus (organization: string, ids: Array<string>, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: TransactionalStatusResponse;  }> {
+    public async transactionalGetStatus (organization: string, ids: Array<string>, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: TransactionalStatusResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/journeys/transactional/status'
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
         let localVarQueryParameters: any = {};
@@ -305,7 +305,7 @@ export class TransactionalApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: TransactionalStatusResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: TransactionalStatusResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -327,7 +327,7 @@ export class TransactionalApi {
      * @param id the ID of the message
      * @param organization 
      */
-    public async transactionalGetStatusById (id: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: TransactionalStatusByIdResponse;  }> {
+    public async transactionalGetStatusById (id: string, organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: TransactionalStatusByIdResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/journeys/transactional/status/{id}'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)))
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
@@ -381,7 +381,7 @@ export class TransactionalApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: TransactionalStatusByIdResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: TransactionalStatusByIdResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -402,7 +402,7 @@ export class TransactionalApi {
      * @summary Use this endpoint to retrieve all journeys on the given organization of type Transactional.
      * @param organization 
      */
-    public async transactionalList (organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: Transactionals;  }> {
+    public async transactionalList (organization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Transactionals;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/journeys/transactional'
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
         let localVarQueryParameters: any = {};
@@ -450,7 +450,7 @@ export class TransactionalApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: Transactionals;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: Transactionals;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -473,7 +473,7 @@ export class TransactionalApi {
      * @param organization 
      * @param model The model containing the data that should be sent
      */
-    public async transactionalSend (apiName: string, organization: string, model: SendTransactionalRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: SendTransactionalResponse;  }> {
+    public async transactionalSend (apiName: string, organization: string, model: SendTransactionalRequestModel, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: SendTransactionalResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/journeys/transactional/{api_name}/send'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
@@ -533,7 +533,7 @@ export class TransactionalApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: SendTransactionalResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: SendTransactionalResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -556,7 +556,7 @@ export class TransactionalApi {
      * @param organization 
      * @param model The model containing the data that should be sent
      */
-    public async transactionalShortcutUpdateProfileAndSendTransactional (apiName: string, organization: string, model: Request, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: UpdateProfileAndSendTransactionalResponse;  }> {
+    public async transactionalShortcutUpdateProfileAndSendTransactional (apiName: string, organization: string, model: Request, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: UpdateProfileAndSendTransactionalResponse;  }> {
         const localVarPath = this.basePath + '/organizations/{organization}/journeys/transactional/shortcut/{api_name}/updateProfileAndSend'
             .replace('{' + 'api_name' + '}', encodeURIComponent(String(apiName)))
             .replace('{' + 'organization' + '}', encodeURIComponent(String(organization)));
@@ -616,7 +616,7 @@ export class TransactionalApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: UpdateProfileAndSendTransactionalResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: UpdateProfileAndSendTransactionalResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);

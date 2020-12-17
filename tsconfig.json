@@ -4,6 +4,5 @@
   "compilerOptions": {
     "declaration": true,
     "outDir": "dist"
-  },
-  "compileOnSave": true
+  }
 }
