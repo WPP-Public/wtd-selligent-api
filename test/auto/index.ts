@@ -13,7 +13,7 @@ describe("Get List", ()=>{
 		
 		return client.listGetList("my_api_generated_list", "teachco_do_not_use_accel").then((response)=>{
 			console.log(response.body);
-			response.body.name.should.eq("my_api_generated_list");
+			response?.body?.name?.should.eq("my_api_generated_list");
 			
 			return "";
 		}).catch((error)=>{
