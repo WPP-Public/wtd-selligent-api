@@ -2,7 +2,7 @@ require("../../src/config");
 import chai from "chai"
 const should = chai.should();
 
-import { ApiKeyAuth, CreateListRequestModel, ListApi, ListApiApiKeys } from "../../src/selligent/api";
+import { ApiKeyAuth, CreateListRequestModel, ListApi, ListApiApiKeys } from "../../src/smc/api";
 
 describe("Get List", ()=>{
 	it("should create list", async ()=>{

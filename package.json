@@ -2,8 +2,8 @@
   "name": "@acceleration/selligent-api",
   "version": "1.0.1",
   "description": "Node wrapper for selligent API",
-  "main": "dist/api.js",
-  "types": "dist/api.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "mocha -r ts-node/register test/auto/*.ts --timeout 5000",
     "publish:version": "npm version patch && npm run build",
