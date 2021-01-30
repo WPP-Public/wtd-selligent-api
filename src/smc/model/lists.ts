@@ -17,14 +17,14 @@ export class Lists {
     /**
     * Collection of lists.
     */
-    'list'?: Array<List>;
+    'lists'?: Array<List>;
 
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
-            "name": "list",
-            "baseName": "list",
+            "name": "lists",
+            "baseName": "lists",
             "type": "Array<List>"
         }    ];
 

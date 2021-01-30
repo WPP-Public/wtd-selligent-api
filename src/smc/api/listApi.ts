@@ -1887,7 +1887,9 @@ export class ListApi {
                     if (error) {
                         reject(error);
                     } else {
+                        //console.log("Body 1", body)
                         body = ObjectSerializer.deserialize(body, "Lists");
+                        console.log("Body 2", body)
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
                             resolve({ response: response, body: body });
                         } else {

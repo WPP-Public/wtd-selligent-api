@@ -2815,7 +2815,7 @@ paths:
           schema:
             $ref: '#/definitions/lists'
           examples:
-            list:
+            lists:
               - id: 123
                 type: Userlist
                 api_name: list_1
@@ -7729,7 +7729,7 @@ definitions:
   lists:
     type: object
     properties:
-      list:
+      lists:
         description: Collection of lists.
         type: array
         items:
